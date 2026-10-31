@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  // GitHub Actions provides GITHUB_REPOSITORY; custom domains use root assets.
-  base: process.env.GITHUB_REPOSITORY ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/` : '/',
+  // This repository is deployed as a GitHub Pages project site.
+  base: '/viron-business-solutions/',
 });

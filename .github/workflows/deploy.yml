@@ -39,6 +39,15 @@ jobs:
       - name: Build project
         run: pnpm build
 
+      - name: Verify production artifact
+        run: |
+          echo "dist contents:"
+          ls -la dist
+          echo "generated dist/index.html:"
+          sed -n '1,120p' dist/index.html
+          ! grep -q '/src/main.jsx' dist/index.html
+          grep -q '/viron-business-solutions/assets/' dist/index.html
+
       - name: Upload build files
         uses: actions/upload-pages-artifact@v3
         with:
