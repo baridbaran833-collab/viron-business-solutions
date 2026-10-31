@@ -1,0 +1,3 @@
+supportedArchitectures:
+  - win32-x64
+  - linux-x64
