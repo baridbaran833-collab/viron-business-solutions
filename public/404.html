@@ -1,0 +1,9 @@
+<!doctype html><meta charset="utf-8"><script>
+  // Restore deep links on GitHub Pages project sites. On a custom domain, the app is at root.
+  (function () {
+    var parts = location.pathname.split('/').filter(Boolean);
+    var base = location.hostname.endsWith('.github.io') && parts.length ? '/' + parts.shift() : '';
+    var route = '/' + parts.join('/');
+    location.replace(base + '/?route=' + encodeURIComponent(route + location.search + location.hash));
+  }());
+</script>
